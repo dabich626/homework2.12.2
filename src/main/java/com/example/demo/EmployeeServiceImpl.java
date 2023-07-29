@@ -4,22 +4,31 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 
 @Service
 
 public class EmployeeServiceImpl implements EmployeeService {
 
-private final List<Employee> empList;
+private static final int SIZE = 4;
+
+private final Map <String, Employee> empList = new HashMap<>();
     public EmployeeServiceImpl() {
-        this.empList = new ArrayList<>();
+
+
+
+        private final Map<String, Employee> empList = new HashMap<>();
+
+
+
     }
-
-
     @Override
     public Employee add(String name, String secondName) {
         Employee emp = new Employee(name, secondName);
         empList.add(emp);
         return emp;
+
+        empList.add(emp);
     }
 
     @Override
@@ -28,6 +37,8 @@ private final List<Employee> empList;
         if(empList.contains(emp)){
 
             return emp;
+
+
         }
 
         throw new EmployeeNotFoundException();
