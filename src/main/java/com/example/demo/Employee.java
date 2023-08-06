@@ -5,11 +5,14 @@ public class Employee {
     private String name;
     private String secondName;
 
+    private double salary;
 
-    public Employee(String name, String secondName) {
+
+    public Employee(String name, String secondName, double salary) {
 
         this.name = name;
         this.secondName = secondName;
+        this.salary = salary;
 
 
     }
@@ -25,6 +28,9 @@ public class Employee {
         return this.secondName;
     }
 
+    public double getSalary() {
+        return salary;
+    }
 
     public String toString() {
 
