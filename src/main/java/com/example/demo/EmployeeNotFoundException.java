@@ -1,6 +1,6 @@
 package com.example.demo;
 
-public class EmployeeNotFoundException extends Exception {
+public class EmployeeNotFoundException extends RuntimeException {
 
     public EmployeeNotFoundException(String massege) {
 

@@ -7,16 +7,23 @@ public class Employee {
 
     private double salary;
 
+    private int department;
+
 
     public Employee(String name, String secondName, double salary) {
 
         this.name = name;
         this.secondName = secondName;
         this.salary = salary;
+        this.department = department;
+
 
 
     }
 
+    public int getDepartment() {
+        return department;
+    }
 
     public String getName() {
 

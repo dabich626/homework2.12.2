@@ -58,6 +58,9 @@ private final Map <String, Employee> empList = new HashMap<>();
 
     @Override
     public Collection<Employee> findAll() {
-        return new ArList<>(empList);
+
+            return empList.values();
+
+
     }
 }
