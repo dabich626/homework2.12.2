@@ -15,7 +15,7 @@ public class DepartmentService {
         this.employeeService = employeeService;
     }
 
-    public Employee findMaxSalaryEmp(int department){
+    public Employee findMaxSalaryEmp(int department) {
 
         return employeeService.findAll().stream()
 

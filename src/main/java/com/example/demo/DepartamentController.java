@@ -20,11 +20,11 @@ public class DepartamentController {
 
     @GetMapping("/max-salary")
 
-        public Employee max (@RequestParam int departamentId ){
+    public Employee max(@RequestParam int departamentId) {
 
-            return service.max(departmentId);
+        return service.max(departmentId);
 
-        }
+    }
 
 
 }
