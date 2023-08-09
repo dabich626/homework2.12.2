@@ -12,7 +12,7 @@ import java.util.Optional;
 @RequestMapping("/departament")
 public class DepartamentController {
 
-    private final DepartamentController service;
+    private final DepartamentService service;
 
     public DepartamentController(DepartmentService service) {
         this.service = service;
@@ -22,7 +22,27 @@ public class DepartamentController {
 
     public Employee max(@RequestParam int departamentId) {
 
-        return service.max(departmentId);
+
+
+        return service.findMaxSalaryEmp(departamentId);
+
+    }
+
+    @GetMapping("/min-salary")
+
+    public Employee min(@RequestParam int departamentId) {
+
+
+
+        return service.findMinSalaryEmp(departamentId);
+
+    }
+
+    @GetMapping("/all")
+
+    public Map<Integer, List<Employee>> min() {
+
+        return service.getAllGroupingByDepartment();
 
     }
 

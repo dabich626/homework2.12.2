@@ -27,6 +27,18 @@ public class DepartmentService {
 
     }
 
+    public Employee findMinSalaryEmp(int department) {
+
+        return employeeService.findAll().stream()
+
+                .filter(employee -> employee.getDepartment() == department)
+
+                .max(Comparator.comparingDouble(employee -> employee.getSalary()))
+
+                .orElseThrow(() -> new EmployeeNotFoundException("Нет сотрудников в отделе " + department));
+
+    }
+
     public Map<Integer, List<Employee>> getAllGroupingByDepartment() {
 
         return employeeService.findAll().stream()
