@@ -1,10 +1,7 @@
 package com.example.demo;
 
 import com.example.demo.request.DepartmentService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -18,7 +15,13 @@ public class DepartamentController {
         this.service = service;
     }
 
-    @GetMapping("/max-salary")
+
+    @GetMapping("/{id}/sum-salary")
+    public double sumByDept(@PathVariable int id){
+return service.sum(id);
+    }
+
+    @GetMapping("/{id}/max/salary")
 
     public Employee max(@RequestParam int departamentId) {
 
@@ -28,7 +31,7 @@ public class DepartamentController {
 
     }
 
-    @GetMapping("/min-salary")
+    @GetMapping("/{id}/min/salary")
 
     public Employee min(@RequestParam int departamentId) {
 

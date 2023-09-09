@@ -46,4 +46,18 @@ public class DepartmentService {
                 .collect(Collectors.groupingBy(employee -> employee.getDepartment()));
 
     }
+
+    public double sum (int deptId){
+
+        return employeeService.getAll()
+
+                .filter(employee -> employee.getDepartment() == deptId)
+
+                .map(Comparator.comparingDouble(employee -> employee.getSalary()))
+
+                .mapToDouble(employee -> employee)
+
+                ,sum();
+
+    }
 }
