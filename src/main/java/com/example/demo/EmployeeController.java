@@ -14,7 +14,7 @@ public class EmployeeController {
     private final EmployeeService service;
 
 
-    public EmployeeController(EmployeeService service) {
+     public EmployeeController(EmployeeService service) {
         this.service = service;
     }
 
@@ -39,7 +39,7 @@ public class EmployeeController {
     }
 
     @GetMapping
-    public Collection<Employee> findAll(){
+    public Collection<Employee> findAll() {
         return service.findAll();
     }
 }

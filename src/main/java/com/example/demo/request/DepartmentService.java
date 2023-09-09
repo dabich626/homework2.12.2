@@ -47,7 +47,7 @@ public class DepartmentService {
 
     }
 
-    public double sum (int deptId){
+    public double sum(int deptId) {
 
         return employeeService.getAll()
 
@@ -55,9 +55,9 @@ public class DepartmentService {
 
                 .map(Comparator.comparingDouble(employee -> employee.getSalary()))
 
-                .mapToDouble(employee -> employee)
+                .mapToDouble(employee -> employee),
 
-                ,sum();
+                 sum();
 
     }
 }

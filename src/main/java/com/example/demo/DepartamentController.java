@@ -17,14 +17,13 @@ public class DepartamentController {
 
 
     @GetMapping("/{id}/sum-salary")
-    public double sumByDept(@PathVariable int id){
-return service.sum(id);
+    public double sumByDept(@PathVariable int id) {
+        return   service.sum(id);
     }
 
     @GetMapping("/{id}/max/salary")
 
     public Employee max(@RequestParam int departamentId) {
-
 
 
         return service.findMaxSalaryEmp(departamentId);
@@ -34,7 +33,6 @@ return service.sum(id);
     @GetMapping("/{id}/min/salary")
 
     public Employee min(@RequestParam int departamentId) {
-
 
 
         return service.findMinSalaryEmp(departamentId);

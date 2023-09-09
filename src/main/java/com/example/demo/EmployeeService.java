@@ -2,7 +2,7 @@ package com.example.demo;
 
 import java.util.Collection;
 
-public interface EmployeeService {
+public interface  EmployeeService {
 
     Employee add(String name, String secondName);
 

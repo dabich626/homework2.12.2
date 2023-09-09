@@ -10,18 +10,18 @@ import java.util.HashMap;
 
 public class EmployeeServiceImpl implements EmployeeService {
 
-private static final int SIZE = 4;
+    private static final int SIZE = 4;
 
-private final Map <String, Employee> empList = new HashMap<>();
+    private final Map<String, Employee> empList = new HashMap<>();
+
     public EmployeeServiceImpl() {
-
 
 
         private final Map<String, Employee> empList = new HashMap<>();
 
 
-
     }
+
     @Override
     public Employee add(String name, String secondName) {
         Employee emp = new Employee(name, secondName);
@@ -34,7 +34,7 @@ private final Map <String, Employee> empList = new HashMap<>();
     @Override
     public Employee find(String name, String secondName) {
         Employee emp = new Employee(name, secondName);
-        if(empList.contains(emp)){
+        if (empList.contains(emp)) {
 
             return emp;
 
@@ -47,7 +47,7 @@ private final Map <String, Employee> empList = new HashMap<>();
     @Override
     public Employee remove(String name, String secondName) {
         Employee emp = new Employee(name, secondName);
-        if(empList.contains(emp)){
+        if (empList.contains(emp)) {
 
             empList.remove(emp);
             return emp;
@@ -59,7 +59,7 @@ private final Map <String, Employee> empList = new HashMap<>();
     @Override
     public Collection<Employee> findAll() {
 
-            return empList.values();
+        return empList.values();
 
 
     }
