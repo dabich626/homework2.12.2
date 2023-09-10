@@ -23,17 +23,54 @@ class EmployeeServiceTest {
         var employee = allEmp.iterator().next();
 
         assertEquals("test", employee.getName());
+        assertEquals("тест", getSecondName());
     }
 
     @Test
-    void find() {
+    void testAddWhenEmpListAreFull() {
+        employeeService.add("иван", "иванов");
+        employeeService.add("петр", "петров");
+        employeeService.add("александр", "александров");
+        employeeService.add("гарри", "поттер");
+        assertThrows(EmployeeStorageIsFullException.class, () -> employeeService.add("рон", "уизли"));
+
     }
 
     @Test
-    void remove() {
+
+    void testAddEmpWhoAlreadyInList(){
+employeeService.add("иван", "иванов");
+assertThrows(EmployeeAlreadyAddedException.class, () -> employeeService.add("иван", "иванов"));
+
     }
 
     @Test
-    void findAll() {
+    void testRemove() {
+        employeeService.add("иван", "иванов");
+        assertEquals("иван", employeeService.findAll().size());
+
+        employeeService.remove("иван", "иванов");
+
+        assertThrows(EmployeeNotFoundException.class () -> employeeService.remove("ваня", "авлександров"));
+
+    }
+
+    @Test
+    void findEmp() {
+        employeeService.add("иван", "иванов");
+        employeeService.find("иван", "иванов");
+        assertEquals("иван", employeeService.getName());
+        assertEquals("иванов", employeeService.getSecondName());
+
+    }
+
+    @Test
+    void testNotFoundEmp(){
+        employeeService.add("иван", "иванов");
+        employeeService.find("александр", "александр");
+        assertEquals("александр", employeeService.getName());
+        assertEquals("иванович", employeeService.getSecondName());
+        assertThrows(EmployeeNotFoundException.class () -> employeeService.find("александр", "иванович"));
+
     }
 }
