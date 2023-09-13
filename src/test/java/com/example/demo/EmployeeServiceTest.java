@@ -49,7 +49,7 @@ assertThrows(EmployeeAlreadyAddedException.class, () -> employeeService.add("и�
         employeeService.add("иван", "иванов");
         assertEquals("иван", employeeService.findAll().size());
 
-        employeeService.remove("иван", "иванов");
+        employeeService.remove("иван", " иванов");
 
         assertThrows(EmployeeNotFoundException.class () -> employeeService.remove("ваня", "авлександров"));
 
