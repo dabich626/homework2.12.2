@@ -45,7 +45,7 @@ departmentService.sum(2);
        new Employee("иван44", "иванов55", 6000000));
        when(employeeService.findAll()).thenReturn(employees);
 
-       Assertions.assertThat(DepartmentService.findMaxSalaryEmp(2).isEqualTo(40d));
+       Assertions.assertThat( DepartmentService.findMaxSalaryEmp(2).isEqualTo(40d));
        departmentService.findMaxSalaryEmp(2);
    }
 
